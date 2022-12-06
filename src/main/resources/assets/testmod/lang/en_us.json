@@ -2,5 +2,11 @@
   "item.testmod.raw_tanzanite": "Raw Tanzanite",
   "item.testmod.tanzanite": "Tanzanite",
 
+  "block.testmod.tanzanite_block": "Block of Tanzanite",
+  "block.testmod.tanzanite_ore": "Tanzanite Ore",
+  "block.testmod.deepslate_tanzanite_ore": "Deepslate Tanzanite Ore",
+  "block.testmod.netherrack_tanzanite_ore": "netherrack_tanzanite_ore",
+  "block.testmod.endstone_tanzanite_ore": "endstone_tanzanite_ore",
+
   "itemGroup.testmod.tanzanite": "Tanzanite Test Tab"
 }
