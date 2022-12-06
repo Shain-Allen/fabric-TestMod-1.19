@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "testmod:tanzanite_block",
+    "testmod:tanzanite_ore",
+    "testmod:deepslate_tanzanite_ore"
+  ]
+}
