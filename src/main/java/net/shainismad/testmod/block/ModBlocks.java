@@ -3,6 +3,7 @@ package net.shainismad.testmod.block;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.OreBlock;
 import net.minecraft.item.BlockItem;
@@ -12,7 +13,9 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 import net.shainismad.testmod.TestMod;
+import net.shainismad.testmod.block.custom.EggplantCropBlock;
 import net.shainismad.testmod.block.custom.JumpyBlock;
+import net.shainismad.testmod.block.custom.TanzaniteLampBlock;
 import net.shainismad.testmod.item.ModItemGroup;
 
 public class ModBlocks {
@@ -29,6 +32,13 @@ public class ModBlocks {
 
     public static final Block JUMPY_BLOCK = registerBlock("jumpy_block", new JumpyBlock(FabricBlockSettings.of(Material.METAL).strength(4f).requiresTool()), ModItemGroup.TANZANITE);
 
+    public static final Block TANZANITE_LAMP = registerBlock("tanzanite_lamp", new TanzaniteLampBlock(FabricBlockSettings.of(Material.METAL).strength(4f).requiresTool().luminance(state -> state.get(TanzaniteLampBlock.LIT) ? 15 : 0)), ModItemGroup.TANZANITE);
+
+    public static final Block EGGPLANT_CROP = registerBlockWithoutItem("eggplant_crop", new EggplantCropBlock(FabricBlockSettings.copy(Blocks.WHEAT)));
+
+    private static Block registerBlockWithoutItem(String name, Block block) {
+        return Registry.register(Registry.BLOCK, new Identifier(TestMod.MOD_ID, name), block);
+    }
     private static Block registerBlock(String name, Block block, ItemGroup tab) {
         registerBlockItem(name, block, tab);
         return Registry.register(Registry.BLOCK, new Identifier(TestMod.MOD_ID, name), block);
